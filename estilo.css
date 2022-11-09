@@ -11,11 +11,11 @@
     display: none;
   
 }
-#dragonMalo{
+/* #dragonMalo{
     width: 60px;
     position: absolute;
     z-index: 400;
-}
+} */
 body{
     background-color: black;
 }
