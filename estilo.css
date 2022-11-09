@@ -1,0 +1,26 @@
+#mario, #marioSalto{
+    width: 40px;
+    margin-top: 515px;
+    margin-left: 100px;
+    transition: all .1s;
+}
+
+#marioSalto{
+    width: 50px;
+    display: none;
+}
+body{
+    background-color: black;
+}
+.containerMario{
+    background-image: url(https://cdn.wallpapersafari.com/10/46/bWs2Tc.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 800px;
+    height: 600px;
+    
+    border: 2px solid yellowgreen;
+    margin-left: 17%;
+    margin-top: 2%;
+    word-wrap: break-word;
+}

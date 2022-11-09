@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="https://img.icons8.com/fluency/2x/super-mario.png">
+    <title>Mario</title>
+</head>
+<body>
+
+    <div class="containerMario">
+        <img id="marioSalto" src="https://www.vippng.com/png/full/531-5310090_8-bit-clipart-classic-mario-mario-bros-pixel.png" alt="">
+        <img id="mario" src="https://static.wikia.nocookie.net/supersmashbrosfanon/images/b/bf/8Bit_Mario.png/revision/latest?cb=20160124140114" alt="">
+    </div>
+
+
+    <script>
+        let espacioX = 100
+
+        $('body').keydown(function(e){
+            console.log(e)
+            if(e.key == 'ArrowRight'){
+                espacioX = espacioX + 10
+                $('#mario').css('margin-left', espacioX)
+                $('#mario').css('transform', 'scaleX(1)')
+                $('#marioSalto').css('margin-left', espacioX)
+                $('#marioSalto').css('transform', 'scaleX(1)')
+            } else if(e.key == 'ArrowLeft'){
+                espacioX = espacioX - 10
+                $('#mario').css('margin-left', espacioX)
+                $('#mario').css('transform', 'scaleX(-1)')
+                $('#marioSalto').css('margin-left', espacioX)
+                $('#marioSalto').css('transform', 'scaleX(-1)')
+            }
+        })
+
+        let espacioY = 515
+
+        $('body').keyup(function(e){
+            if(e.key == ' '){
+                espacioY = espacioY - 40
+                $('#mario').css('display', 'none')
+                $('#marioSalto').css('margin-top', espacioY)
+                $('#marioSalto').css('display', 'inline')
+                $('#marioSalto').css('transition', 'all 4s')
+                setTimeout(()=>{
+                    espacioY = espacioY + 40
+                    $('#marioSalto').css('margin-top', espacioY)
+                    $('#marioSalto').css('display', 'none')
+                    $('#mario').css('display', 'inline')
+                    $('#marioSalto').css('transition', 'all 4s')
+                },200);
+                
+            }
+        })
+    </script>
+
+</body>
+</html>
