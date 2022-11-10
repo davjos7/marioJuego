@@ -1,21 +1,23 @@
-#mario, #marioSalto{
+#mario{
     width: 40px;
-    margin-top: 515px;
-    margin-left: 100px;
+    margin-top: 510px;
+    /* margin-left: 100px; */
     transition: all .1s;
     position: relative;
 }
-
-#marioSalto{
-    width: 50px;
-    display: none;
-  
+.velocidad{
+    transition: all .3s;
 }
-/* #dragonMalo{
-    width: 60px;
+
+#dragonMalo{
+    width: 70px;
     position: absolute;
-    z-index: 400;
-} */
+  top: 510px;
+  right: 20px;
+  height: 60px;
+  z-index: 10;
+  transition: all 50s;
+}
 body{
     background-color: black;
 }
@@ -28,5 +30,7 @@ body{
     border: 2px solid yellowgreen;
     margin-left: 17%;
     margin-top: 2%;
-    word-wrap: break-word;
+    position: relative;
+    overflow: hidden;
+
 }

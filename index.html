@@ -9,10 +9,9 @@
 <body>
 
     <div class="containerMario">
-        <img id="marioSalto" src="https://www.vippng.com/png/full/531-5310090_8-bit-clipart-classic-mario-mario-bros-pixel.png" alt="">
+        <!-- <img id="marioSalto" src="https://www.vippng.com/png/full/531-5310090_8-bit-clipart-classic-mario-mario-bros-pixel.png" alt=""> -->
         <img id="mario" src="https://static.wikia.nocookie.net/supersmashbrosfanon/images/b/bf/8Bit_Mario.png/revision/latest?cb=20160124140114" alt="">
-
-        <!-- <img id="dragonMalo" src="https://www.seekpng.com/png/full/14-142996_bowser-villano-de-mario-bros-nombre.png" alt=""> -->
+        <img id="dragonMalo" src="https://static.wikia.nocookie.net/dbpl/images/e/e6/Ultra_Buu.png/revision/latest/scale-to-width-down/300?cb=20130823120247" alt=""> 
        
     </div>
 
@@ -25,17 +24,16 @@
         $('body').keydown(function(e){
             console.log(e)
             if(e.key == 'ArrowRight'){
+                
                 espacioX = espacioX + 10
                 $('#mario').css('margin-left', espacioX)
                 $('#mario').css('transform', 'scaleX(1)')
-                $('#marioSalto').css('margin-left', espacioX)
-                $('#marioSalto').css('transform', 'scaleX(1)')
+                $('#mario').removeClass('velocidad')
             } else if(e.key == 'ArrowLeft'){
                 espacioX = espacioX - 10
                 $('#mario').css('margin-left', espacioX)
                 $('#mario').css('transform', 'scaleX(-1)')
-                $('#marioSalto').css('margin-left', espacioX)
-                $('#marioSalto').css('transform', 'scaleX(-1)')
+                $('#mario').removeClass('velocidad')
             }
         })
 
@@ -43,20 +41,27 @@
 
         $('body').keyup(function(e){
             if(e.key == ' '){
-                espacioY = espacioY - 40
-                $('#mario').css('display', 'none')
-                $('#marioSalto').css('margin-top', espacioY)
-                $('#marioSalto').css('display', 'inline')
-                $('#marioSalto').css('transition', 'all 4s')
+                $('#mario').addClass('velocidad')
+                // espacioY = espacioY - 40
+                $('#mario').css('margin-top', 450)
+              
+                $( '#mario' ).attr( 'src', 'https://www.vippng.com/png/full/531-5310090_8-bit-clipart-classic-mario-mario-bros-pixel.png')
+                // $('#marioSalto').css('margin-top', espacioY)
+                // $('#marioSalto').css('display', 'block')
                 setTimeout(()=>{
-                    espacioY = espacioY + 40
-                    $('#marioSalto').css('margin-top', espacioY)
-                    $('#marioSalto').css('display', 'none')
-                    $('#mario').css('display', 'inline')
-                    $('#marioSalto').css('transition', 'all 4s')
+                    // espacioY = espacioY + 40
+                    $('#mario').css('margin-top', 515)
+                    $( '#mario' ).attr( 'src', 'https://static.wikia.nocookie.net/supersmashbrosfanon/images/b/bf/8Bit_Mario.png/revision/latest?cb=20160124140114' )
+                    // $('#marioSalto').css('display', 'none')
+                    // $('#mario').css('display', 'block')
                 },200);
-                
             }
+        })
+
+        $('body').ready(function(){
+            setTimeout(function(){
+                $('#dragonMalo').css('right', 1190)
+            }, 2000)
         })
     </script>
 
