@@ -9,16 +9,17 @@
 <body>
 
     <div class="containerMario">
-        <!-- <img id="marioSalto" src="https://www.vippng.com/png/full/531-5310090_8-bit-clipart-classic-mario-mario-bros-pixel.png" alt=""> -->
+            <!-- IMAGENES DE MARIO -->
         <img id="mario" src="https://static.wikia.nocookie.net/supersmashbrosfanon/images/b/bf/8Bit_Mario.png/revision/latest?cb=20160124140114" alt="">
         <img id="dragonMalo" src="https://static.wikia.nocookie.net/dbpl/images/e/e6/Ultra_Buu.png/revision/latest/scale-to-width-down/300?cb=20130823120247" alt=""> 
-       
+        <img id="piso" src="https://www.pngmart.com/files/7/Ground-PNG-HD.png" alt="">
+        <img id="peleanaruto" src="http://pa1.narvii.com/6405/7fc048d52c43dea97f2daff08b529a758bcfdec7_00.gif" alt="">
+        <img id="vidas" src="https://cdn.pixabay.com/photo/2020/04/27/14/54/pixel-5100188_640.png" alt="">
     </div>
 
-    
-
-
     <script>
+
+        // FUNCION DE MOVIMIENTOS PARA LOS COSTADOS
         let espacioX = 100
 
         $('body').keydown(function(e){
@@ -36,14 +37,14 @@
                 $('#mario').removeClass('velocidad')
             }
         })
-
+        // FUNCION PARA LOS MOVIMIENTOS HACIA ARRIBA
         let espacioY = 515
 
         $('body').keyup(function(e){
             if(e.key == ' '){
                 $('#mario').addClass('velocidad')
                 // espacioY = espacioY - 40
-                $('#mario').css('margin-top', 450)
+                $('#mario').css('margin-top', 430)
               
                 $( '#mario' ).attr( 'src', 'https://www.vippng.com/png/full/531-5310090_8-bit-clipart-classic-mario-mario-bros-pixel.png')
                 // $('#marioSalto').css('margin-top', espacioY)
@@ -57,12 +58,25 @@
                 },200);
             }
         })
+ // funcion de impacto
+ 
+        
 
+ // FUNCION DE LENTITUD MALO 
+        let trazoIzquierdo = 710
         $('body').ready(function(){
             setTimeout(function(){
-                $('#dragonMalo').css('right', 1190)
-            }, 2000)
+                $('#dragonMalo').css('right', trazoIzquierdo)
+            }, 1000)
         })
+
+        
+
+        // $('body').ready(function(){
+        //     setTimeout(function(){
+        //         $('#dragonMalo').css('right', -710)
+        //     }, 1000)
+        // })
     </script>
 
 </body>
